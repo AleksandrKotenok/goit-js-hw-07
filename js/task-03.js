@@ -12,3 +12,9 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const pointInjection = document.querySelector('#gallery')
+const imgAdd = arr => {  return arr.map(({ url, alt }) =>
+  {  return `<li><img src="${url}" alt="${alt}" width="300px" height="200px"></li>`}).join('')}
+pointInjection.insertAdjacentHTML('afterbegin', imgAdd(images))
+pointInjection.style.listStyle = 'none'
+pointInjection.style.display = 'flex'
